@@ -5,7 +5,7 @@ export default function MovieList({ movies }) {
   const location = useLocation();
 
     return (<>
-  <h2>Trending movies </h2>
+  <h2 className={css.title}>Trending movies </h2>
     <ul className={css.list}>
       {movies.map(movie => {
           return (

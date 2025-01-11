@@ -7,7 +7,7 @@ export default function Loader() {
       <Hearts
         height="80"
         width="80"
-        color="#4fa94d"
+        color="rgba(243, 124, 237, 0.514)"
         ariaLabel="hearts-loading"
         wrapperStyle={{}}
         wrapperClass=""
