@@ -3,7 +3,9 @@ import Navigation from "../Navigation/Navigation";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import HomePage from "../../pages/HomePage/HomePage";
 import MoviesPage from "../../pages/MoviesPage/MoviesPage";
-
+import MovieDetailsPage from "../../pages/MovieDetailsPage/MovieDetailsPage";
+import MovieCast from "../../components/MovieCast";
+import MovieReviews from "../../components/MovieReviews"
 
 export default function App() {
   return (
@@ -12,6 +14,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/muvies" element={<MoviesPage />} />
+        <Route path="/muvies" element={<MovieDetailsPage />}>
+          <Route path="cast" element={<MovieCast />} />
+          <Route path="reviews" element={<MovieReviews />} />
+        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
