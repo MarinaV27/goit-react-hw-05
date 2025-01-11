@@ -4,10 +4,11 @@ import css from './MovieList.module.css';
 export default function MovieList({ movies }) {
   const location = useLocation();
 
-  return (
+    return (<>
+  <h2>Trending movies </h2>
     <ul className={css.list}>
       {movies.map(movie => {
-        return (
+          return (
           <li className={css.item} key={movie.id}>
             <Link to={`/movies/${movie.id}`} state={location}>
               <img
@@ -17,9 +18,10 @@ export default function MovieList({ movies }) {
                 <p className={css.title}>{movie.title}</p>
               </div>
             </Link>
-          </li>
+              </li>
         );
       })}
-    </ul>
+        </ul>
+        </>
   );
 }
