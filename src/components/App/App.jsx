@@ -6,8 +6,8 @@ export default function App() {
     <div>
       <Navigation />
       <Routes>
-        <Route path="/" element={<h1>Marina</h1>} />
-        <Route path="/muvies" element={<h1>All</h1>} />
+        <Route path="/" element={<h1>HomePage</h1>} />
+        <Route path="/muvies" element={<h1>MoviesPage</h1>} />
       </Routes>
     </div>
   );
