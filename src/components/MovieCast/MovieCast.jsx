@@ -7,7 +7,6 @@ import {fetchCastByMovieId} from '../../movies-api.js'
 
 const MovieCast = () => {
     const { movieId } = useParams()
-    //const [actors, setActors] = useState([])
     const [movieCast, setMovieCast] = useState(null)
     useEffect(() => {
         const getData = async () => {
@@ -20,9 +19,6 @@ const MovieCast = () => {
      if (!movieCast) {
         return <div>{<Loader />}</div>
     }
-    
-    
-    
     
     
     
