@@ -26,3 +26,8 @@ export const fetchMoviesById = async (id) => {
     const { data } = await axios.get(`/movie/${id}`, options)
     return data;
 };
+
+export const fetchCastByMovieId = async (id) => {
+  const { data } = await axios.get(`/movie/${id}/credits`, options)
+  return data.cast;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, Outlet, useParams } from "react-router-dom";
 import { fetchMoviesById } from "../../movies-api";
 import css from "./MovieDetailsPage.module.css"
+import Loader from "../../components/Loader/Loader.jsx"
 
 const MovieDetailsPage = () => {
     const { movieId } = useParams();
@@ -15,7 +16,7 @@ const MovieDetailsPage = () => {
     }, [movieId]);
 
     if (!movieDetails) {
-        return <h2>Loadin...</h2>
+        return <div>{<Loader />}</div>
     }
 
 
@@ -26,17 +27,18 @@ const MovieDetailsPage = () => {
             />
           </div>
          
-        <div>
+        <nav>
             <ul className={css.listInfo}>
                 <li>
                     <NavLink to="cast" className={css.link}>Cast</NavLink>
                 </li>
                 <li>
                     <NavLink to="reviews" className={css.link}>Reviews</NavLink>
-                </li>   
-        </ul>
+                </li> 
+                
+            </ul>
         <Outlet />
-        </div>
+        </nav>
         </>
     );
 }
