@@ -22,7 +22,7 @@ export const fetchMovies = async () => {
   return response.data.results;
 };
 
-export const fetchMoviesById = async id => {
-    const { data } = await axios.get(`/movies/${id}`)
+export const fetchMoviesById = async (id) => {
+    const { data } = await axios.get(`/movie/${id}`, options)
     return data;
 };
