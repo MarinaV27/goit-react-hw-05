@@ -1,6 +1,8 @@
+import SearchBar from "../../components/SearchBar/SearchBar";
+
 const MoviesPage = () => {
     return <div>
-        MoviesPage
+        <SearchBar />
     </div>
 }
 export default MoviesPage;
