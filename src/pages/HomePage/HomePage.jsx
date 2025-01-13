@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchMovies } from "../../movies-api";
-//import MovieList from "../../components/MovieList/MovieList";
-import Loader    from "../../components/Loader/Loader";
+import MovieList from "../../components/MovieList/MovieList";
+import Loader    from "../../components/Loader/Loader.jsx";
 
 const HomePage = () => {
     const [movies, setMovies] = useState([]);
@@ -17,7 +17,7 @@ const HomePage = () => {
     }
 
     return <div>
-        M
+    
         {movies.length > 0 && <MovieList movies={movies} />}
 
     </div>

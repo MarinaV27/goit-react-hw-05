@@ -13,7 +13,7 @@ export default function Navigation() {
         <NavLink to="/" className={buildlinkClass}>
           Home
         </NavLink>
-        <NavLink to="/muvies" className={buildlinkClass}>
+        <NavLink to="/movies" className={buildlinkClass}>
           Movies
         </NavLink>
       </nav>
