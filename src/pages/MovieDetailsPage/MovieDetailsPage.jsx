@@ -3,7 +3,8 @@ import { NavLink, Outlet, useParams } from "react-router-dom";
 import { fetchMoviesById } from "../../movies-api";
 import css from "./MovieDetailsPage.module.css"
 import Loader from "../../components/Loader/Loader.jsx"
-import clsx from 'clsx';
+
+//import clsx from 'clsx';
 
 const MovieDetailsPage = () => {
     const { movieId } = useParams();
@@ -25,7 +26,7 @@ const MovieDetailsPage = () => {
     }
 
 
-    return (<> <div className={css.wrapper}>
+    return (<div> <div className={css.wrapper}>
             <img
               src={
       movieDetails.poster_path
@@ -72,7 +73,7 @@ const MovieDetailsPage = () => {
             </ul>
         <Outlet />
         </nav>
-        </>
+        </div>
     );
 }
 export default MovieDetailsPage;
