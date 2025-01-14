@@ -2,16 +2,16 @@ import { Field, Form, Formik } from 'formik'
 
 
 const SearchBar = ({handleChangeQuery, query}) => {
-    const onSabmit = values => {
+    const onSubmit = (values) => {
         handleChangeQuery(values.query)
     }
     const initialValues = {
-        query,
+        query ,
     }
 
   return (
       <div>
-          <Formik initialValues={initialValues} onSabmit={onSabmit}>
+          <Formik initialValues={initialValues} onSubmit={onSubmit}>
               <Form>
                   <Field name="query"/>
                   <button type='submit'>Search</button>
