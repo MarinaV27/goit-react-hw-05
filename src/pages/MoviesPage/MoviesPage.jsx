@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import css from "./MoviesPage"
-import { fetchMovies } from "../../movies-api";
+import { fetchMoviesByQuery } from "../../movies-api";
 import MovieList from "../../components/MovieList/MovieList"; 
 import { useSearchParams } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const MoviesPage = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const data = await fetchMovies()
+            const data = await fetchMoviesByQuery()
             setMovies(data)
         }
         getData()
