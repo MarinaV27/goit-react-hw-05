@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import css from './MovieList.module.css';
 
 
 export default function MovieList({ movies }) {
-//const location = useLocation()
+const location = useLocation()
 
     return (
  
@@ -11,7 +11,7 @@ export default function MovieList({ movies }) {
       {movies.map(movie => {
           return (
           <li className={css.item} key={movie.id}>
-              <Link to={`/movies/${movie.id.toString()}`}  >
+              <Link to={`/movies/${movie.id.toString()}`} state={location}  >
               <img
                 src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
               />
