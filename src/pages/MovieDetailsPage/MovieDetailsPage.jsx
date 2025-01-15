@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { fetchMoviesById } from "../../movies-api";
 import css from "./MovieDetailsPage.module.css"
@@ -89,7 +89,9 @@ const MovieDetailsPage = () => {
                 </li> 
                 
             </ul>
+      <Suspense fallback={<Loader />}>
         <Outlet />
+      </Suspense>
         </nav>
         </div>
     );
