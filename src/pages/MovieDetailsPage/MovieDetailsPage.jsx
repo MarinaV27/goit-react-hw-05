@@ -9,7 +9,7 @@ import { useRef } from "react";
 
 const MovieDetailsPage = () => {
   const location = useLocation()
-  const goBackRef = useRef(location.state)
+  const goBackRef = useRef(location.state ?? "/movies")
 
 
   const { movieId } = useParams();
