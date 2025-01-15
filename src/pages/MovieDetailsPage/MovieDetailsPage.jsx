@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { fetchMoviesById } from "../../movies-api";
 import css from "./MovieDetailsPage.module.css"
 import Loader from "../../components/Loader/Loader.jsx"
@@ -7,6 +7,7 @@ import Loader from "../../components/Loader/Loader.jsx"
 //import clsx from 'clsx';
 
 const MovieDetailsPage = () => {
+  const location = useLocation()
     const { movieId } = useParams();
     const [movieDetails, setMovieDetails] = useState(null);
     const defaultImg =
@@ -26,7 +27,18 @@ const MovieDetailsPage = () => {
     }
 
 
-    return (<div> <div className={css.wrapper}>
+  return (<div className={css.containerPage}>
+    
+    {
+      <div>
+       
+        <Link to={location.state} className={css.back}>
+          Go back
+        </Link>
+      </div>
+    }  
+    {movieDetails && (
+    <div className={css.wrapper}>
             <img
               src={
       movieDetails.poster_path
@@ -59,7 +71,7 @@ const MovieDetailsPage = () => {
               </li>
             </ul>
     </div>
-        
+    )}
          
         <nav>
             <ul className={css.listInfo}>
