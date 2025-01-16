@@ -5,6 +5,7 @@ import css from "./MovieDetailsPage.module.css"
 import Loader from "../../components/Loader/Loader.jsx"
 import { useRef } from "react";
 
+
 //import clsx from 'clsx';
 
 const MovieDetailsPage = () => {
